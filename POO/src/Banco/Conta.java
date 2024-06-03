@@ -7,11 +7,13 @@ public class Conta {
     protected int agencia;
     protected int numero;
     protected double saldo;
+    protected Cliente cliente;
 
     
-    public Conta() {
+    public Conta(Cliente cliente) {
         this.agencia = Conta.agenciapadrao;
         this.numero = sequencial ++;
+        this.cliente=cliente;
     }
 
     public void sacar(double valor){ 
@@ -19,19 +21,7 @@ public class Conta {
 
     }
 
-    public void imprimirextrato (boolean ContaCorrente){
-        if (ContaCorrente) {
-            System.out.println("xxx extrato conta corrente xxx");
-        }
-        else {
-            System.out.println("xxx extrato conta poupança xxx");
-        }
 
-        System.out.println("Agencia: "+ agencia);
-        System.out.println("Conta: "+ numero);
-        System.out.println("Saldo:  "+ saldo);
-
-    }
 
    
 
@@ -52,6 +42,15 @@ public class Conta {
 
     public int getNumero() {
         return numero;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void imprimirextrato() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'imprimirextrato'");
     }
 
     

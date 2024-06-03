@@ -1,18 +1,32 @@
 package Banco;
 
+import java.util.List;
+
 public class Banco {
 
     private String nome;
+    private List <Conta> contas;
 
-    public static void main(String[] args) {
-        Conta cc= new ContaCorrente();
-        cc.depositar(100);
-        cc.imprimirextrato(true);
-        Conta cp= new ContaPoupanca();
-        cp.imprimirextrato(false);
-        cc.transferir(100, cp);
-        cp.imprimirextrato(false);
-        
+    
+    
+    public Banco(String nome) {
+        this.nome = nome;
     }
+
+    public List<Conta> getContas() {
+        return contas;
+    }
+
+    public void setContas(List<Conta> contas) {
+        this.contas = contas;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    
+
+    
 
 }
